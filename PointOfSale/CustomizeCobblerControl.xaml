@@ -7,6 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock>Customize Cobbler</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock FontSize="30" TextDecorations="Underline">Customize Cobbler</TextBlock>
+            <CheckBox x:Name="WithIceCreamCheckBox" Content="Ice Cream" IsChecked="{Binding Path=WithIceCream}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock FontSize="30" TextDecorations="Underline">Choose A Fruit Filling</TextBlock>
+            <ComboBox x:Name="FruitFillingComboBox" SelectedItem="{Binding Path=Fruit}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

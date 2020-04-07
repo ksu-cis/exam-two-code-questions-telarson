@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ExamTwoCodeQuestions.Data;
 
 namespace ExamTwoQuestions.PointOfSale
 {
@@ -21,6 +22,16 @@ namespace ExamTwoQuestions.PointOfSale
         public CustomizeCobblerControl()
         {
             InitializeComponent();
+
+            //Scale up the CheckBox and ComboBox to be more useable with a touch screen
+            ScaleTransform scale = new ScaleTransform(2.0, 2.0);
+            WithIceCreamCheckBox.RenderTransform = scale;
+            FruitFillingComboBox.RenderTransform = scale;
+
+            //Get the Enum values and set them as the item source for the FruitFillingComboBox
+            FruitFillingComboBox.ItemsSource = Enum.GetValues(typeof(FruitFilling));
+
         }
+
     }
 }
